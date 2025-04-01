@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Datos Bancarios</title>
+</head>
+<body>
+    <h2>¡Datos Copiados!</h2>
+    <p>Puedes pegarlos en tu aplicación de banco.</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var datosBancarios = `Banco: Banco X
+Cuenta:  19998350134
+Titular: Daniela Aravena
+RUT: 16.383.195.3
+Tipo de Cuenta: Cuenta Corriente`;
+
+            navigator.clipboard.writeText(datosBancarios).then(() => {
+                alert("✅ Datos bancarios copiados al portapapeles.");
+            }).catch(err => {
+                alert("❌ Error al copiar. Por favor, copia manualmente.");
+            });
+        });
+    </script>
+</body>
+</html>
